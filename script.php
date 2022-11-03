@@ -55,12 +55,12 @@ if($_FILES['csv']['error'] == 0){
                         array_change_key_case($attributes, CASE_LOWER); 
                         $decoded_json['attributes'][0]['value'] = $attributes['hair'];
                         $decoded_json['attributes'][1]['value'] = $attributes['eyes'];
+                        $decoded_json['attributes'][2]['value'] = $attributes['teeth']; 
                         $decoded_json['attributes'][3]['value'] = $attributes['clothing'];
                         $decoded_json['attributes'][4]['value'] = $attributes['accessories'];
-                        $decoded_json['attributes'][5]['value'] = $attributes['expression'];
+                        $decoded_json['attributes'][5]['value'] = $attributes['expressions'];
                         $decoded_json['attributes'][6]['value'] = $attributes['strength'];
-                        $decoded_json['attributes'][7]['value'] = $attributes['weakness'];
-                        $decoded_json['attributes'][2]['value'] = $attributes['teeth'];                      
+                        $decoded_json['attributes'][7]['value'] = $attributes['weakness'];                     
                     }
                
                     //create JSON for the row
