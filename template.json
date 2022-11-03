@@ -9,39 +9,39 @@
     "attributes": [ 
         {
             "trait_type": "Hair",
-            "value": "Mouse"
+            "value": ""
         },
         {
             "trait_type": "Eyes",
-            "value": "Yellow"
+            "value": ""
         },
         {
             "trait_type": "Teeth",
-            "value": "Mouse"
+            "value": ""
         },
         {
             "trait_type": "Clothing",
-            "value": "Yellow"
+            "value": ""
         },
         {
             "trait_type": "Accessories",
-            "value": "Mouse"
+            "value": ""
         },
         {
             "trait_type": "Expression",
-            "value": "Yellow" 
+            "value": "" 
         },
         {
             "trait_type": "Strength",
-            "value": "Yellow"
+            "value": ""
         },
         {
             "trait_type": "Weakness",
-            "value": "Yellow"
+            "value": ""
         },
         {
             "trait_type": "gender",
-            "value": "Male" 
+            "value": "" 
         }
     ],
     "collection": {
