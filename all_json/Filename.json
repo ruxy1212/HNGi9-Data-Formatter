@@ -1,0 +1,25 @@
+{
+    "format": "CHIP-0007",
+    "name": "Filename",
+    "description": "Description",
+    "minting_tool": "Team X",
+    "sensitive_content": false,
+    "series_number": "Series Number",
+    "series_total": 420,
+    "attributes": [
+        {
+            "trait_type": "gender",
+            "value": "Gender"
+        }
+    ],
+    "collection": {
+        "name": "Zuri NFT Tickets for Free Lunch",
+        "id": "b774f676-c1d5-422e-beed-00ef5510c64d",
+        "attributes": [
+            {
+                "type": "description",
+                "value": "Rewards for accomplishments during HNGi9."
+            }
+        ]
+    }
+}

@@ -39,19 +39,38 @@ if($_FILES['csv']['error'] == 0){
                     $decoded_json['minting_tool'] = $team_name;
                     $decoded_json['name'] = $data[1];           
                     $decoded_json['description'] = $data[3];
-                    $decoded_json['series_number'] = $data[0];
+                    $decoded_json['series_number'] = (int)$data[0];
                     $decoded_json['series_total'] = 420;
                     $decoded_json['attributes'][0]['value'] = $data[4];
                     $encoded_json = json_encode($decoded_json, JSON_PRETTY_PRINT|JSON_PRESERVE_ZERO_FRACTION);
                     $data[7] = $hashed_json = hash('sha256', $encoded_json);
 
+                    $attributes = [];
+                    foreach (preg_split('/[,.]/', $data[5]) as $attribute){
+                        $parts = explode(':', $attribute);
+                        $attributes[trim($parts[0])] = $parts[1];
+                    }
+
+                    if(!empty($attributes)){
+                        array_change_key_case($attributes, CASE_LOWER); 
+                        $decoded_json['attributes'][0]['value'] = $attributes['hair'];
+                        $decoded_json['attributes'][1]['value'] = $attributes['eyes'];
+                        $decoded_json['attributes'][3]['value'] = $attributes['clothing'];
+                        $decoded_json['attributes'][4]['value'] = $attributes['accessories'];
+                        $decoded_json['attributes'][5]['value'] = $attributes['expression'];
+                        $decoded_json['attributes'][6]['value'] = $attributes['strength'];
+                        $decoded_json['attributes'][7]['value'] = $attributes['weakness'];
+                        $decoded_json['attributes'][2]['value'] = $attributes['teeth'];                      
+                    }
+               
                     //create JSON for the row
-                    $export_file = $decoded_json['name'].".json";
-                    file_put_contents($path.'/'.$export_file, $encoded_json);
+                $export_file = $decoded_json['name'].".json";
+                file_put_contents($path.'/'.$export_file, $encoded_json);
+
                 }
             }
             //insert row into output csv
-            fputcsv($cvv, $data);
+            fputcsv($cvv, $data);  
         }
         //close both CSVs
         fclose($csv);

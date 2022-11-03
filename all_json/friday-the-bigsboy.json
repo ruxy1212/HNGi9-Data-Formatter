@@ -1,15 +1,15 @@
 {
     "format": "CHIP-0007",
-    "name": "Namex",
-    "description": "Descriptx",
-    "minting_tool": "Teamx",
+    "name": "friday-the-bigsboy",
+    "description": "friday always live up to his name. every friday is for the party.",
+    "minting_tool": "TEAM HEADLIGHT",
     "sensitive_content": false,
-    "series_number": 1,
+    "series_number": "176",
     "series_total": 420,
-    "attributes": [ 
+    "attributes": [
         {
             "trait_type": "Hair",
-            "value": "Mouse"
+            "value": "Male"
         },
         {
             "trait_type": "Eyes",
@@ -29,7 +29,7 @@
         },
         {
             "trait_type": "Expression",
-            "value": "Yellow" 
+            "value": "Yellow"
         },
         {
             "trait_type": "Strength",
@@ -41,7 +41,7 @@
         },
         {
             "trait_type": "gender",
-            "value": "Male" 
+            "value": "Male"
         }
     ],
     "collection": {

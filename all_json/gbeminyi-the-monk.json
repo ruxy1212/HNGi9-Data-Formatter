@@ -1,15 +1,15 @@
 {
     "format": "CHIP-0007",
-    "name": "Namex",
-    "description": "Descriptx",
-    "minting_tool": "Teamx",
+    "name": "gbeminyi-the-monk",
+    "description": "He lives in a monastery off the coast. No one has heard him speak in years.",
+    "minting_tool": "TEAM BEVEL",
     "sensitive_content": false,
-    "series_number": 1,
+    "series_number": 11,
     "series_total": 420,
-    "attributes": [ 
+    "attributes": [
         {
             "trait_type": "Hair",
-            "value": "Mouse"
+            "value": "male"
         },
         {
             "trait_type": "Eyes",
@@ -29,7 +29,7 @@
         },
         {
             "trait_type": "Expression",
-            "value": "Yellow" 
+            "value": "Yellow"
         },
         {
             "trait_type": "Strength",
@@ -41,7 +41,7 @@
         },
         {
             "trait_type": "gender",
-            "value": "Male" 
+            "value": "Male"
         }
     ],
     "collection": {

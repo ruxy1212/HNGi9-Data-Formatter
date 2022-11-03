@@ -1,15 +1,15 @@
 {
     "format": "CHIP-0007",
-    "name": "Namex",
-    "description": "Descriptx",
-    "minting_tool": "Teamx",
+    "name": "chinedu-the-farmer",
+    "description": "An hardworking farmer who has 6 boys who help out on the farm",
+    "minting_tool": "TEAM RULER",
     "sensitive_content": false,
-    "series_number": 1,
+    "series_number": "350",
     "series_total": 420,
-    "attributes": [ 
+    "attributes": [
         {
             "trait_type": "Hair",
-            "value": "Mouse"
+            "value": "male"
         },
         {
             "trait_type": "Eyes",
@@ -29,7 +29,7 @@
         },
         {
             "trait_type": "Expression",
-            "value": "Yellow" 
+            "value": "Yellow"
         },
         {
             "trait_type": "Strength",
@@ -41,7 +41,7 @@
         },
         {
             "trait_type": "gender",
-            "value": "Male" 
+            "value": "Male"
         }
     ],
     "collection": {
