@@ -1,5 +1,9 @@
 # NFT Data Formater
 
 ## How to use
-1. Screen this is the toher of teh day in teh next line for the ting to show againa nd again anda gain. Screen this is the toher of teh day in teh next line for the ting to show againa nd again anda gain . Screen this is the toher of teh day in teh next line for the ting to show againa nd again anda gain
-2. Thick .Screen this is the toher of teh day in teh next line for the ting to show againa nd again anda gain .Screen this is the toher of teh day in teh next line for the ting to show againa nd again anda gain
+1. Open CMD
+
+2. Upload and run script using Curl: `curl -F "csv=@C:/path/to/csv/file.csv" https://hng-nftdataformatter.onrender.com/script.php`
+For example, curl -F "csv=@C:/Users/HP/Downloads/HNGi9.csv" https://hng-nftdataformatter.onrender.com/script.php
+ 
+3. Download the filename.output csv file using Curl: `curl -O https://hng-nftdataformatter.onrender.com/output/HNGi9.output.csv`
