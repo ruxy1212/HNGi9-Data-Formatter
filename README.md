@@ -8,7 +8,7 @@
    - Column3 => Name (NFT name)
    - Column4 => Description
    - Column5 => Gender
-   - Column6 => Attributes (contains colon-separated key and value pairs, delimited by either a comma or a period. The attributes keys are `hair, eyes, clothing, accessories, expression, strength, weakness, teeth`)
+   - Column6 => Attributes (contains colon-separated key and value pairs, delimited by either semicolon. The attributes keys are `hair, eyes, clothing, accessories, expression, strength, weakness, teeth`)
    - Column7 => UUID (not in use currently)
    Note that the Team names ('minting_tool') will occupy an empty row, before the NFTs.
    
@@ -22,5 +22,5 @@ For example, `curl -O https://nftdataformatter.herokuapp.com/output/HNGi9.output
 
 ### NB
  - Take note of the filename when uploading, it will also be required when downloading.
- - Delimiters for the 'Attributes' column should not be omitted. It currently reads comma (,) and dot (.) as delimiters, then semicolon (;) between each key-value pair.
+ - Delimiters for the 'Attributes' column should not be omitted. It currently reads semicolons (;) as delimiters, then colon (:) between each key-value pair.
  - The csv file can also be uploaded from [`https://nftdataformatter.herokuapp.com`](https://nftdataformatter.herokuapp.com) and the output will be downloaded from terminal. 
