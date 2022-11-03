@@ -23,4 +23,4 @@ For example, `curl -O https://nftdataformatter.herokuapp.com/output/HNGi9.output
 ### NB
  - Take note of the filename when uploading, it will also be required when downloading.
  - Delimiters for the 'Attributes' column should not be omitted. It currently reads comma (,) and dot (.) as delimiters, then semicolon (;) between each key-value pair.
- - The csv file can also be uploaded from `https://nftdataformatter.herokuapp.com` and the output will be downloaded from terminal.
+ - The csv file can also be uploaded from [`https://nftdataformatter.herokuapp.com`](https://nftdataformatter.herokuapp.com) and the output will be downloaded from terminal. 
