@@ -27,47 +27,43 @@ if($_FILES['csv']['error'] == 0){
         $header = true;
         while (($data = fgetcsv($csv)) !== FALSE) {
             //check if it is heading
-            if($header) { $header = false; $data[7] = "Hash"; }
+            if($header) { $header = false; $data[8] = "Hash"; }
             else{
-                if(empty($data[0])){ } //row is empty, do nothing
-                else if (!is_numeric($data[0]) && $data[1] == "" && $data[2] == "" && $data[3] == "" && $data[4] == "") {
-                    //get team name if column1(index0) is not numeric
+                if(!empty($data[0])){ 
+                    //get team name if column1(index0) is not empty
                     $team_name = $data[0];
-                }else{
-                    //get other column details
-                    $decoded_json = json_decode($template_json, true); 
-                    $decoded_json['minting_tool'] = $team_name;
-                    $decoded_json['name'] = $data[1];           
-                    $decoded_json['description'] = $data[3];
-                    $decoded_json['series_number'] = (int)$data[0];
-                    $decoded_json['series_total'] = 420;
-                    $decoded_json['attributes'][0]['value'] = $data[4];
-                    $encoded_json = json_encode($decoded_json, JSON_PRETTY_PRINT|JSON_PRESERVE_ZERO_FRACTION);
-                    $data[7] = $hashed_json = hash('sha256', $encoded_json);
+                }
+                //get other column details
+                $decoded_json = json_decode($template_json, true); 
+                $decoded_json['minting_tool'] = $team_name;
+                $decoded_json['name'] = $data[2];           
+                $decoded_json['description'] = $data[4];
+                $decoded_json['series_number'] = (int)$data[1];
+                $decoded_json['series_total'] = 420;
+                $decoded_json['attributes'][0]['value'] = $data[5];
 
-                    $attributes = [];
-                    foreach (preg_split('/[,.]/', $data[5]) as $attribute){
-                        $parts = explode(':', $attribute);
-                        $attributes[trim($parts[0])] = $parts[1];
-                    }
-
-                    if(!empty($attributes)){
-                        array_change_key_case($attributes, CASE_LOWER); 
-                        $decoded_json['attributes'][0]['value'] = $attributes['hair'];
-                        $decoded_json['attributes'][1]['value'] = $attributes['eyes'];
-                        $decoded_json['attributes'][2]['value'] = $attributes['teeth']; 
-                        $decoded_json['attributes'][3]['value'] = $attributes['clothing'];
-                        $decoded_json['attributes'][4]['value'] = $attributes['accessories'];
-                        $decoded_json['attributes'][5]['value'] = $attributes['expressions'];
-                        $decoded_json['attributes'][6]['value'] = $attributes['strength'];
-                        $decoded_json['attributes'][7]['value'] = $attributes['weakness'];                     
-                    }
+                $attributes = []; //convert string to array
+                foreach (preg_split('/[;]/', $data[6]) as $attribute){
+                    $parts = explode(':', $attribute);
+                    $attributes[trim($parts[0])] = trim($parts[1]); //trim the beginning and trailing whitespaces
+                }
+                if(!empty($attributes)){ //assign the values
+                    array_change_key_case($attributes, CASE_LOWER);
+                    $decoded_json['attributes'][1]['value'] = $attributes['hair'];
+                    $decoded_json['attributes'][2]['value'] = $attributes['eyes'];
+                    $decoded_json['attributes'][3]['value'] = $attributes['teeth']; 
+                    $decoded_json['attributes'][4]['value'] = $attributes['clothing'];
+                    $decoded_json['attributes'][5]['value'] = $attributes['accessories'];
+                    $decoded_json['attributes'][6]['value'] = $attributes['expression'];
+                    $decoded_json['attributes'][7]['value'] = $attributes['strength'];
+                    $decoded_json['attributes'][8]['value'] = $attributes['weakness'];                     
+                }
+                $encoded_json = json_encode($decoded_json, JSON_PRETTY_PRINT|JSON_PRESERVE_ZERO_FRACTION);
+                $data[8] = $hashed_json = hash('sha256', $encoded_json);               
                
-                    //create JSON for the row
+                //create JSON for the row
                 $export_file = $decoded_json['name'].".json";
                 file_put_contents($path.'/'.$export_file, $encoded_json);
-
-                }
             }
             //insert row into output csv
             fputcsv($cvv, $data);  
