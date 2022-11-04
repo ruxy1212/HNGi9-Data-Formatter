@@ -45,7 +45,7 @@ if($_FILES['csv']['error'] == 0){
                 $attributes = []; //convert string to array
                 foreach (preg_split('/[;]/', $data[6]) as $attribute){
                     $parts = explode(':', $attribute);
-                    $attributes[trim($parts[0])] = trim($parts[1]); //trim the beginning and trailing whitespaces
+                    $attributes[trim($parts[0])] = @trim($parts[1]); //trim the beginning and trailing whitespaces
                 }
                 if(!empty($attributes)){ //assign the values
                     array_change_key_case($attributes, CASE_LOWER);
