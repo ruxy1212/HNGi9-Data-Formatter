@@ -1,4 +1,4 @@
-# NFT Data Formater (CHIP-0007)
+# NFT Data Formatter (CHIP-0007)
 
 ## Description
 This script is a tool which uploads a .csv file containing NFT data to the server and generates a JSON for each entry, and thn appends the hash of each JSON to the output .csv file.
