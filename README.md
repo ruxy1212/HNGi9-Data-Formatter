@@ -17,7 +17,7 @@ The JSON is generated for every entry using CHIP-0007 schema. An hash (SHA-256) 
    - Column6 => Attributes (contains colon-separated key and value pairs, delimited by semicolon. The attributes keys are `hair, eyes, clothing, accessories, expression, strength, weakness, teeth`)
    - Column7 => UUID (not in use currently)
    
-2. Open CMD
+2. Open Terminal
 
 3. Upload CSV and run script using Curl: `curl -F "csv=@C:/path/to/csv/filename.csv" https://nftdataformatter.herokuapp.com/script.php --ssl-no-revoke`
 For example, `curl -F "csv=@C:/Users/HP/Downloads/HNGi9.csv" https://nftdataformatter.herokuapp.com/script.php --ssl-no-revoke`
